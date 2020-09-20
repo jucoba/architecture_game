@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6387f167-6be1-4ce8-9608-156d09fa4484" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/FrontWebReactNative/screens/RegisterTeam.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FrontWebReactNative/styles/globalStyles.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Tutorial/src/data_structure_challenges/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Tutorial/src/data_structure_challenges/string_matrix.py" beforeDir="false" />
@@ -14,7 +16,11 @@
       <change beforePath="$PROJECT_DIR$/../Tutorial/tests/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Tutorial/tests/square_matrix_unit_test.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Tutorial/tests/unit_test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontReactNative/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FrontReactNative/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontWebReactNative/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FrontWebReactNative/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontWebReactNative/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/FrontWebReactNative/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontWebReactNative/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/FrontWebReactNative/package.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +29,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/FrontReactNative" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1hhhy2xwmpIAtFx8geBjhnQXg3P" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -65,5 +71,11 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/FrontReactNative" />
+      <path value="$PROJECT_DIR$/FrontWebReactNative" />
+    </ignored-roots>
   </component>
 </project>
