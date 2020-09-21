@@ -25,6 +25,10 @@ const globalStyles = StyleSheet.create({
         backgroundColor: "#DDDDDD",
         padding: 10
     },
+    link: {
+        margin:5,
+        padding: 10
+    },
 }
 );
 

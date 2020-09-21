@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6387f167-6be1-4ce8-9608-156d09fa4484" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/FrontWebReactNative/screens/home.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Tutorial/src/data_structure_challenges/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Tutorial/src/data_structure_challenges/string_matrix.py" beforeDir="false" />
@@ -15,7 +16,7 @@
       <change beforePath="$PROJECT_DIR$/../Tutorial/tests/square_matrix_unit_test.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Tutorial/tests/unit_test.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontWebReactNative/screens/RegisterTeam.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FrontWebReactNative/screens/RegisterTeam.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontWebReactNative/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FrontWebReactNative/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FrontWebReactNative/styles/globalStyles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FrontWebReactNative/styles/globalStyles.tsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
