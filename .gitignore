@@ -2,3 +2,5 @@ venv
 .expo
 __pycache__
 .idea
+.DS_Store
+node_modules
