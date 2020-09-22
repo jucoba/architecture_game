@@ -8,8 +8,7 @@ const globalStyles = StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
         backgroundColor: '#fff',
-        alignItems: 'flex-start',
-        justifyContent: 'top',
+        alignItems: 'flex-start'
     },
     textInupt: {
         borderColor: 'gray',
