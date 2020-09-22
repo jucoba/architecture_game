@@ -1,2 +1,4 @@
 venv
 .expo
+__pycache__
+.idea

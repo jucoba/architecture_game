@@ -17,9 +17,8 @@ export default function App() {
                   component={Home}
                   options={{ title: 'Welcome' }}
                 />
-              <Stack.Screen name="RegisterTeam" component={RegisterTeam} />
+              <Stack.Screen name="RegisterTeam" component={RegisterTeam}  options={{ title: 'Registrar Equipo' }}/>
               </Stack.Navigator>
-
         </NavigationContainer>
 
     );

@@ -3,7 +3,15 @@ import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput } from 'react-native';
 import globalStyles from '../styles/globalStyles'
 
-const onPress = () => {};
+const onPress = () => {
+    console.log('press');
+    return fetch('http://localhost:5000/register_team')
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch((error) => {
+      console.error(error);
+    });
+};
 
 export default function RegisterTeam () {
     return (
