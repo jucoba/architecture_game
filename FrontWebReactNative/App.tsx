@@ -9,6 +9,13 @@ import Home from './screens/home';
 const Stack = createStackNavigator();
 
 export default function App() {
+    if (__DEV__) {
+        console.log("starting in dev");
+        global.url = "http://localhost:5000/"
+    }else {
+        console.log("starting in prod");
+        global.url = "/"
+    }
     return (
         <NavigationContainer>
             <Stack.Navigator>
