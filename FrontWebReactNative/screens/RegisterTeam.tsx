@@ -3,9 +3,8 @@ import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput } from 'react-native';
 import globalStyles from '../styles/globalStyles'
 
-const onPress = () => {
-    console.log('press');
-    return fetch('http://localhost:5000/register_team')
+const register_team = () => {
+    return fetch('/register_team')
     .then(response => response.json())
     .then(data => console.log(data))
     .catch((error) => {
@@ -20,7 +19,7 @@ export default function RegisterTeam () {
             <TextInput style={globalStyles.textInupt}/>
             <Text style={globalStyles.text}>Tu Nombre </Text>
             <TextInput style={globalStyles.textInupt}/>
-            <TouchableOpacity onPress={onPress} style={globalStyles.button}>
+            <TouchableOpacity onPress={register_team} style={globalStyles.button}>
                 <View >
                     <Text>Crea tu equipo</Text>
                 </View>
