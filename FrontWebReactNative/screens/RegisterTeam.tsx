@@ -1,7 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
 import globalStyles from '../styles/globalStyles'
+
+import { render, fireEvent } from '@testing-library/react-native';
 
 const register_team = () => {
 
@@ -13,21 +15,30 @@ const register_team = () => {
         });
 };
 
-export default function RegisterTeam () {
+function RegisterTeam() {
 
     return (
         <View style={globalStyles.container}>
-            <Text style={globalStyles.text}>Nombre de tu equipo </Text>
-            <TextInput style={globalStyles.textInupt}/>
-            <Text style={globalStyles.text}>Tu Nombre </Text>
-            <TextInput style={globalStyles.textInupt}/>
-            <TouchableOpacity onPress={register_team} style={globalStyles.button}>
-                <View >
-                    <Text>Crea tu equipo</Text>
-                </View>
-            </TouchableOpacity>
+            <Text style={globalStyles.text}>Nombre de tu equipo</Text>
+            <TextInput style={globalStyles.textInupt}
+                accessibilityLabel="team-name"
+            />
+            <Text style={globalStyles.text}>Tu Nombre</Text>
+            <TextInput style={globalStyles.textInupt}
+                accessibilityLabel="player-name"
+            />
+            <Button
+                onPress={register_team}
+                style={globalStyles.button}
+                title="Crea tu equipo"
+                color="#841584"
+            />
         </View>
     );
 
 };
+
+export default RegisterTeam ;
+
+
 
