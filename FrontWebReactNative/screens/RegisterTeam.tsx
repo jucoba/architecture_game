@@ -1,11 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, TextInput } from 'react-native';
 import globalStyles from '../styles/globalStyles'
 
 import { render, fireEvent } from '@testing-library/react-native';
 
-const register_team = () => {
+function register_team () {
 
     return fetch(global.url+'register_team')
         .then(response => response.json())
@@ -15,7 +15,13 @@ const register_team = () => {
         });
 };
 
-function RegisterTeam() {
+
+function RegisterTeam () {
+    return  ( <RegisterTeam_with_function onSubmit = { register_team }/>);
+
+};
+
+function RegisterTeam_with_function ( {onSubmit} ) {
 
     return (
         <View style={globalStyles.container}>
@@ -27,18 +33,17 @@ function RegisterTeam() {
             <TextInput style={globalStyles.textInupt}
                 accessibilityLabel="player-name"
             />
-            <Button
-                onPress={register_team}
-                style={globalStyles.button}
-                title="Crea tu equipo"
-                color="#841584"
-            />
+            <TouchableOpacity onPress= { onSubmit } >
+                <Text>Crea tu equipo</Text>
+            </TouchableOpacity>
         </View>
     );
 
 };
 
-export default RegisterTeam ;
+
+export default RegisterTeam;
+export { RegisterTeam, RegisterTeam_with_function };
 
 
 

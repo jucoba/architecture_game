@@ -4,7 +4,8 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import globalStyles from '../styles/globalStyles'
 import RegisterTeam from './screens/RegisterTeam';
 
-const onPress = () => {};
+const on_Press = () => {console.log("Click yea!!")};
+
 
 export default function Home ({ navigation }) {
     return (
