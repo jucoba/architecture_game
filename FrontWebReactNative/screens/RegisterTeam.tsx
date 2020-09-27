@@ -3,7 +3,6 @@ import React, {useState} from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput } from 'react-native';
 import globalStyles from '../styles/globalStyles'
 
-import { render, fireEvent } from '@testing-library/react-native';
 
 function register_team ( team_name, player_name) {
     console.log(team_name);
