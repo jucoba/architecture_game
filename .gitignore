@@ -1,9 +1,6 @@
 venv
-.expo
 __pycache__
 .idea
 .DS_Store
 node_modules
 web-build
-.expo
-.expo/packager-info.json .expo/settings.json .expo/web
