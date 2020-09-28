@@ -1,19 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput } from 'react-native';
-import globalStyles from '../styles/globalStyles'
+import globalStyles from '../styles/globalStyles';
+import { register_team_api_call } from '../ApiCalls/register_server_api';
 
 
 function register_team ( team_name, player_name) {
-    console.log(team_name);
-    console.log(player_name);
-
-    return fetch(global.url+'register_team')
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .catch((error) => {
-          console.error(error);
-        });
+    return register_team_api_call( team_name, player_name);
 };
 
 
