@@ -2,7 +2,6 @@ import random
 
 
 class Team:
-
     _current_clients: int
     _capacity: int
     _current_balance: int
@@ -13,8 +12,12 @@ class Team:
         self._architecure_level = 1
         self._can_receive_new_clients = False
         self._capacity = 0
-        self._id = random.randint(1000, 9999)
+        self._id = self.create_team_id()
         self._current_clients = 0
+
+    @staticmethod
+    def create_team_id() -> int:
+        return random.randint(1000, 9999)
 
     @property
     def name(self):
