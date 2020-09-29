@@ -8,7 +8,7 @@ class TestTeams(unittest.TestCase):
         self.a_team = Team('A Team', 'Anibal')
 
     def test_create_team_name_must_be_set(self):
-        self.assertEqual(self.a_team.name, 'A Team')
+        self.assertEqual(self.a_team.team_name, 'A Team')
 
     def test_create_team_balance_must_be_set(self):
         self.assertEqual(self.a_team.balance, 100000)
@@ -20,7 +20,7 @@ class TestTeams(unittest.TestCase):
         self.assertEqual(self.a_team.can_receive_new_clients, False)
 
     def test_create_team_must_have_0_capacity(self):
-        self.assertEqual(self.a_team.capacity, 0)
+        self.assertEqual(self.a_team.capacity, 100)
 
     def test_create_team_must_have_a_4_digit_id(self):
         self.assertGreaterEqual(self.a_team.id, 1000)
