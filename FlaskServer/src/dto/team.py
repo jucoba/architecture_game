@@ -1,23 +1,21 @@
 import random
 
+def create_team_id() -> int:
+    return random.randint(1000, 9999)
 
 class Team:
     _current_clients: int
     _capacity: int
     _current_balance: int
 
-    def __init__(self, team_name, first_member):
+    def __init__(self, team_name, first_member, f=create_team_id):
         self.team_name = team_name
         self._current_balance = 100000
         self._architecure_level = 1
         self._can_receive_new_clients = False
         self._capacity = 0
-        self._id = self.create_team_id()
+        self._id = f()
         self._current_clients = 0
-
-    @staticmethod
-    def create_team_id() -> int:
-        return random.randint(1000, 9999)
 
     @property
     def name(self):
@@ -46,3 +44,6 @@ class Team:
     @property
     def current_clients(self):
         return self._current_clients
+
+
+
