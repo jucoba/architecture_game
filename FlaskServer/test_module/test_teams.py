@@ -5,9 +5,20 @@ from src.dto.team import Team
 
 class TestTeams(unittest.TestCase):
 
-    def test_create_team_name_should_be_right(self):
-        a_team = Team('A Team', 'Anibal')
-        self.assertEqual(a_team.name, 'A Team', 'The name is not A Team')
+
+    def setUp(self) -> None:
+        self.a_team = Team('A Team', 'Anibal')
+
+
+    def test_create_team_name_must_be_set(self):
+        self.assertEqual(self.a_team.name, 'A Team')
+
+    def test_create_team_balance_must_be_set(self):
+        self.assertEqual(self.a_team.balance, 100000)
+
+    def test_create_team_architecture_level_must_be_set(self):
+        self.assertEqual(self.a_team.architecture_level, 1)
+
 
 
 
