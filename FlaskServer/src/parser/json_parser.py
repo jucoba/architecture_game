@@ -1,15 +1,14 @@
-import json
+from typing import Dict
+
 
 from src.game.team import Team
-
 
 
 class JsonParser:
 
     @staticmethod
-    def create_team(json_str: str):
-        json_team = json.loads(json_str)
-        team_name = json_team["team_name"]
-        player_name = json_team["player_name"]
+    def create_team(team_dict: Dict):
+        team_name = team_dict["team_name"]
+        player_name = team_dict["player_name"]
         team = Team(team_name, player_name)
         return team

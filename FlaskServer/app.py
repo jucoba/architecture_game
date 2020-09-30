@@ -1,6 +1,5 @@
 from flask import Flask, request
-from src.parser.json_parser import JsonPareser
-
+import json
 import random
 import sys
 
@@ -15,5 +14,5 @@ def home():
 @app.route('/register_team', methods=['GET', 'POST'])
 def register_team():
     print(request.json)
-    print(sys.path)
+
     return str(random.randint(1000, 9999))
