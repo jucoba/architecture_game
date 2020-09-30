@@ -6,3 +6,4 @@ node_modules
 web-build
 FrontWebReactNative/.expo
 .expo
+FlaskServer/arch_game.egg-info/

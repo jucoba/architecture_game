@@ -1,18 +1,14 @@
 from flask import Flask, request
-import json
+from arch_game import app
 import random
-import sys
-
-app = Flask(__name__, static_url_path='/')
+from arch_game.parser.json_parser import JsonParser
 
 
-@app.route("/app")
-def home():
-    return app.send_static_file('index.html')
 
 
 @app.route('/register_team', methods=['GET', 'POST'])
 def register_team():
     print(request.json)
-
+    parser = JsonParser()
+    print(parser.create_team(request.json))
     return str(random.randint(1000, 9999))

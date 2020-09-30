@@ -1,5 +1,5 @@
 import unittest
-from src.game.game_logic import GameLogic
+from arch_game.game.game_logic import GameLogic
 
 
 class TestGameBoard(unittest.TestCase):

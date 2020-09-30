@@ -1,6 +1,6 @@
 import unittest
-from src.game.game_board import GameBoard
-from src.game.team import Team
+from arch_game.game.game_board import GameBoard
+from arch_game.game.team import Team
 
 
 class TestGameBoard(unittest.TestCase):

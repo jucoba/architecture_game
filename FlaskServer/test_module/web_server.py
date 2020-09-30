@@ -1,5 +1,5 @@
 from flask import Flask, request
-from src.parser.json_parser import JsonPareser
+from arch_game.parser.json_parser import JsonPareser
 
 import random
 import sys

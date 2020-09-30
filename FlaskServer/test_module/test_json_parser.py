@@ -1,6 +1,6 @@
 import unittest
-from src.parser.json_parser import JsonParser
-from src.game.team import Team
+from arch_game.parser.json_parser import JsonParser
+from arch_game.game.team import Team
 
 
 class TestJsonPareser(unittest.TestCase):

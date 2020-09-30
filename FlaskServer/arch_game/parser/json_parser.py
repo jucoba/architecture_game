@@ -1,7 +1,7 @@
 from typing import Dict
 
 
-from src.game.team import Team
+from arch_game.game.team import Team
 
 
 class JsonParser:
