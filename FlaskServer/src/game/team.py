@@ -6,7 +6,7 @@ def create_team_id() -> int:
 
 
 class Team:
-    _current_clients: int
+    current_clients: int
     _capacity: int
     _current_balance: int
 
@@ -16,7 +16,8 @@ class Team:
         self.architecture_level = 1
         self._can_receive_new_clients = False
         self._id = f()
-        self._current_clients = 0
+        self.current_clients = 0
+
 
     @property
     def team_name(self):
@@ -25,6 +26,10 @@ class Team:
     @team_name.setter
     def team_name(self, value):
         self._team_name = value
+
+    @property
+    def income(self):
+        return self.current_clients * 50
 
     @property
     def balance(self):
@@ -67,6 +72,14 @@ class Team:
             return 15000
         if self.architecture_level == 3:
             return 30000
+
+    @property
+    def pyg(self):
+        return self.income - self.cicle_cost
+
+    @current_clients.setter
+    def current_clients(self, value):
+        self._current_clients = value
 
 
 
