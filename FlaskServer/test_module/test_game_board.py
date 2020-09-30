@@ -3,7 +3,6 @@ from src.game.game_board import GameBoard
 from src.game.team import Team
 
 
-
 class TestGameBoard(unittest.TestCase):
 
     def test_new_board_must_have_0_teams(self):
@@ -23,3 +22,10 @@ class TestGameBoard(unittest.TestCase):
         board.add_team(a_team)
         board.add_team(p_team)
         self.assertEqual(len(board.teams), 2)
+
+    def test_retrive_a_team_must_have_name_a_team(self):
+        board = GameBoard()
+        a_team = Team('A Team', 'Anibal')
+        board.add_team(a_team)
+        b_team = board.get_team(a_team.id)
+        self.assertEqual(a_team, b_team)
