@@ -5,6 +5,20 @@ def create_team_id() -> int:
     return random.randint(1000, 9999)
 
 
+capacity_switch = {
+    1: 100,
+    2: 600,
+    3: 2000
+}
+
+cost_switch = {
+    1: 5000,
+    2: 15000,
+    3: 30000
+
+}
+
+
 class Team:
     current_clients: int
     _capacity: int
@@ -17,7 +31,6 @@ class Team:
         self._can_receive_new_clients = False
         self._id = f()
         self.current_clients = 0
-
 
     @property
     def team_name(self):
@@ -49,12 +62,7 @@ class Team:
 
     @property
     def capacity(self):
-        if self.architecture_level == 1:
-            return 100
-        if self.architecture_level == 2:
-            return 600
-        if self.architecture_level == 3:
-            return 2000
+        return capacity_switch[self._architecture_level]
 
     @property
     def id(self):
@@ -66,12 +74,7 @@ class Team:
 
     @property
     def cicle_cost(self):
-        if self.architecture_level == 1:
-            return 5000
-        if self.architecture_level == 2:
-            return 15000
-        if self.architecture_level == 3:
-            return 30000
+        return cost_switch[self._architecture_level]
 
     @property
     def pyg(self):
@@ -80,8 +83,3 @@ class Team:
     @current_clients.setter
     def current_clients(self, value):
         self._current_clients = value
-
-
-
-
-
