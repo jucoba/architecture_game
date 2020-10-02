@@ -5,7 +5,9 @@ import globalStyles from '../styles/globalStyles';
 import { get_team_api } from '../ApiCalls/get_team_api';
 
 
-function TeamPanel( {id }) {
-    get_team_api (id);
-    return (  <View/> );
+export default function TeamPanel( {id }) {
+
+    return (  <View style={globalStyles.container}>
+                <Text>hola</Text>
+              </View> );
 };

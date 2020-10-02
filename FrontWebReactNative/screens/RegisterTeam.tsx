@@ -6,8 +6,9 @@ import { register_team_api_call } from '../ApiCalls/register_server_api';
 
 
 function register_team ( team_name, player_name, navigation) {
-    register_team_api_call( team_name, player_name);
-    return navigation.navigate('TeamPanel')
+
+    let team_id = register_team_api_call( team_name, player_name);
+    navigation.navigate('TeamPanel', {id: team_id })
 };
 
 
@@ -36,7 +37,7 @@ function RegisterTeam_with_function ( {onSubmit, navigation} ) {
                 testID="register_player_text_input"
 
             />
-            <TouchableOpacity onPress= { () => onSubmit(team_name_input, player_name_input, navigation)   } >
+            <TouchableOpacity onPress= { () => onSubmit(team_name_input, player_name_input, navigation)  } >
                 <Text>Crea tu equipo</Text>
             </TouchableOpacity>
         </View>

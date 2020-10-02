@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import RegisterTeam from './screens/RegisterTeam';
-import TeamPanel from './screens/RegisterTeam';
+import TeamPanel from './screens/TeamPanel';
 import Home from './screens/home';
 
 const Stack = createStackNavigator();

@@ -15,7 +15,7 @@ def register_team():
     team = parser.create_team(request.json)
     logic.register_new_team(team)
     print('There are {0} registered teams'.format(len(logic.teams)))
-    return str(team.id)
+    return jsonify({'id': team.id})
 
 
 @app.route('/team/<int:id>', methods=['GET'])
@@ -23,7 +23,7 @@ def get_team(id):
     print(id)
     team_list = logic.teams
     if id not in team_list:
-        abort (404, description="Team not found")
+        abort(404, description="Team not found")
     else:
         t = team_list[id]
         parser = JsonParser()

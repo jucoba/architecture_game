@@ -1,9 +1,10 @@
-import React from 'react';
+import React  from 'react';
 
 
 function register_team_api_call ( team_name, player_name) {
     console.log(team_name);
     console.log(player_name);
+    let id;
 
     return fetch(
         global.url+'register_team', {
@@ -19,7 +20,7 @@ function register_team_api_call ( team_name, player_name) {
         }
     )
     .then(response => response.json())
-    .then(data => console.log(data))
+    .then((json) => { return json.id; })
     .catch(
         (error) => {
             console.error(error);
