@@ -5,17 +5,18 @@ import globalStyles from '../styles/globalStyles';
 import { register_team_api_call } from '../ApiCalls/register_server_api';
 
 
-function register_team ( team_name, player_name) {
-    return register_team_api_call( team_name, player_name);
+function register_team ( team_name, player_name, navigation) {
+    register_team_api_call( team_name, player_name);
+    return navigation.navigate('TeamPanel')
 };
 
 
-function RegisterTeam () {
-    return  ( <RegisterTeam_with_function onSubmit = { register_team }/>);
+function RegisterTeam ( {navigation}) {
+    return  ( <RegisterTeam_with_function onSubmit = { register_team }  navigation = {navigation} />);
 
 };
 
-function RegisterTeam_with_function ( {onSubmit} ) {
+function RegisterTeam_with_function ( {onSubmit, navigation} ) {
 
     const [team_name_input, setTeam_name_input] = useState('');
     const [player_name_input, setPlayer_name_input] = useState('');
@@ -35,7 +36,7 @@ function RegisterTeam_with_function ( {onSubmit} ) {
                 testID="register_player_text_input"
 
             />
-            <TouchableOpacity onPress= { () => onSubmit(team_name_input, player_name_input)   } >
+            <TouchableOpacity onPress= { () => onSubmit(team_name_input, player_name_input, navigation)   } >
                 <Text>Crea tu equipo</Text>
             </TouchableOpacity>
         </View>
