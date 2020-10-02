@@ -5,9 +5,11 @@ import globalStyles from '../styles/globalStyles';
 import { get_team_api } from '../ApiCalls/get_team_api';
 
 
-export default function TeamPanel( {id }) {
-
+export default function TeamPanel( {route, navigation }) {
+    const { value } = route.params;
+    let id = JSON.stringify(value);
+    console.log('value ' + JSON.stringify(value));
     return (  <View style={globalStyles.container}>
-                <Text>hola</Text>
+                <Text>hola {id}</Text>
               </View> );
 };

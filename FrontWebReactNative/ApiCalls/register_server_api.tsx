@@ -1,31 +1,28 @@
 import React  from 'react';
 
 
-function register_team_api_call ( team_name, player_name) {
-    console.log(team_name);
-    console.log(player_name);
-    let id;
+const register_team_api_call = async ( team_name, player_name) => {
 
-    return fetch(
-        global.url+'register_team', {
-            method: 'POST',
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                team_name: team_name,
-                player_name: player_name
-            })
-        }
-    )
-    .then(response => response.json())
-    .then((json) => { return json.id; })
-    .catch(
-        (error) => {
-            console.error(error);
-        }
-    );
+    try {
+        let response = await fetch(
+            global.url+'register_team', {
+                method: 'POST',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    team_name: team_name,
+                    player_name: player_name
+                })
+            }
+        );
+        let json = await response.json();
+        return json.id;
+    } catch(error) {
+        console.log(error)
+    }
+
 };
 
 export { register_team_api_call }

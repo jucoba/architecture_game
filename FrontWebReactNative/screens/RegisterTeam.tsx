@@ -6,9 +6,13 @@ import { register_team_api_call } from '../ApiCalls/register_server_api';
 
 
 function register_team ( team_name, player_name, navigation) {
+    let response = register_team_api_call( team_name, player_name);
+    response.then(
+        function(value) {
+            navigation.navigate('TeamPanel', {value })
+        }
+    )
 
-    let team_id = register_team_api_call( team_name, player_name);
-    navigation.navigate('TeamPanel', {id: team_id })
 };
 
 
