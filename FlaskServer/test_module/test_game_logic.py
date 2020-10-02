@@ -9,3 +9,11 @@ class TestGameBoard(unittest.TestCase):
         game_logic: GameLogic = GameLogic()
         game_logic.register_new_team(Team("A Team", "Anibal"))
         self.assertEqual(len(game_logic.teams), 1)
+
+    def test_get_team(self):
+        game_logic: GameLogic = GameLogic()
+        t = Team("A Team", "Anibal")
+        game_logic.register_new_team(t)
+        self.assertEqual(t, game_logic.teams[t.id])
+
+

@@ -28,3 +28,4 @@ class TestTeams(unittest.TestCase):
 
     def test_create_team_must_have_0_clients(self):
         self.assertEqual(self.a_team.current_clients, 0)
+
