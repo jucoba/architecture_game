@@ -7,9 +7,8 @@ class GameLogic:
     def __init__(self):
         self.board = GameBoard()
 
-    def register_new_team(self, team_name: str, player_name: str):
-        t = Team(team_name, player_name)
-        self.board.add_team(t)
+    def register_new_team(self, team: Team):
+        self.board.add_team(team)
 
     @property
     def teams(self):
