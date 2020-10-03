@@ -4,7 +4,9 @@ import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
 import globalStyles from '../styles/globalStyles';
 import { get_team_api } from '../ApiCalls/get_team_api';
 
-
+function render_team(json_team, navigation) {
+    navigation.setOptions( {title: json_team.team_name + ' ' +json_team.id});
+}
 
 export default function TeamPanel( {route, navigation }) {
     const { value } = route.params;
@@ -23,10 +25,16 @@ export default function TeamPanel( {route, navigation }) {
         }, [id]
     );
 
+    useEffect (
+        () => {
+            render_team(json_team, navigation)
+        }, [json_team]
+    );
+
+
+
     return (  <View style={globalStyles.container}>
-                <Text>hola {id}</Text>
-                <TextInput
-                    onChangeText = {(text) => setId(text) }
-                />
+                <Text>hola {json_team.id}</Text>
+
               </View> );
 };
