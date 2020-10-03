@@ -4,11 +4,26 @@ import { StyleSheet } from 'react-native';
 
 
 const globalStyles = StyleSheet.create({
-    container: {
+    mainContainer: {
         flex: 1,
         flexDirection: 'column',
         backgroundColor: '#fff',
         alignItems: 'flex-start'
+    },
+    titleContainer: {
+        flex: 1,
+        flexDirection: 'column',
+        backgroundColor: '#fff',
+        alignItems: 'flex-start'
+    },
+    fixedProperty: {
+        flex: 1,
+        flexDirection: 'row',
+        backgroundColor: '#fff',
+        alignItems: 'flex-start'
+    },
+    titleText: {
+        fontSize:30,
     },
     textInupt: {
         borderColor: 'gray',

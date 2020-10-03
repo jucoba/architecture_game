@@ -28,7 +28,7 @@ function RegisterTeam_with_function ( {onSubmit, navigation} ) {
     const [player_name_input, setPlayer_name_input] = useState('');
 
     return (
-        <View style={globalStyles.container}>
+        <View style={globalStyles.mainContainer}>
             <Text style={globalStyles.text}>Nombre de tu equipo</Text>
             <TextInput style={globalStyles.textInupt}
                 accessibilityLabel="team-name"

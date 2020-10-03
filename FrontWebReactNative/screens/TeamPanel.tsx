@@ -24,12 +24,12 @@ export default function TeamPanel( {route, navigation }) {
 
     return (
 
-        <View style={globalStyles.container}>
+        <View style={globalStyles.mainContainer}>
 
-            <View compId='Title'>
-                <Text >{json_team.team_name}</Text>
-                <View>
-                    <Text >Saldo</Text>
+            <View style={globalStyles.titleContainer}>
+                <Text style={globalStyles.titleText}>{json_team.team_name}</Text>
+                <View style={globalStyles.fixedProperty}>
+                    <Text >Saldo </Text>
                     <Text >{json_team.balance}</Text>
                 </View>
             </View>
