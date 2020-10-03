@@ -35,13 +35,6 @@ function RegisterTeam_with_function ( {onSubmit, navigation} ) {
                 onChangeText = {text => setTeam_name_input(text) }
                 testID="register_team_text_input"
             />
-            <Text style={globalStyles.text}>Tu Nombre</Text>
-            <TextInput style={globalStyles.textInupt}
-                accessibilityLabel="player-name"
-                onChangeText = {text => setPlayer_name_input(text) }
-                testID="register_player_text_input"
-
-            />
             <TouchableOpacity onPress= { () => onSubmit(team_name_input, player_name_input, navigation)  } >
                 <Text>Crea tu equipo</Text>
             </TouchableOpacity>
