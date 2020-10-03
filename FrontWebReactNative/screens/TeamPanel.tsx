@@ -22,8 +22,6 @@ export default function TeamPanel( {route, navigation }) {
         }, [id]
     );
 
-
-
     return (
 
         <View style={globalStyles.container}>
@@ -41,6 +39,10 @@ export default function TeamPanel( {route, navigation }) {
                     <Text>{json_team.current_clients}</Text>
                 </View>
                 <View>
+                    <Text>Capacidad máxima de Clientes</Text>
+                    <Text>{json_team.capacity}</Text>
+                </View>
+                <View>
                     <Text>Ingresos</Text>
                     <Text>{json_team.income}</Text>
                 </View>
@@ -52,8 +54,12 @@ export default function TeamPanel( {route, navigation }) {
                     <Text>PyG</Text>
                     <Text>{json_team.pyg}</Text>
                 </View>
-
-
+            </View>
+            <View compId='config'>
+                <Text>Nivel de arquitectura</Text>
+                <Text>
+                    {json_team.architecture_level}
+                </Text>
             </View>
 
         </View>
