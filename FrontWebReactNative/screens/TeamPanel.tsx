@@ -4,9 +4,6 @@ import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
 import globalStyles from '../styles/globalStyles';
 import { get_team_api } from '../ApiCalls/get_team_api';
 
-function render_team(json_team, navigation) {
-    navigation.setOptions( {title: json_team.team_name + ' ' +json_team.id});
-}
 
 export default function TeamPanel( {route, navigation }) {
     const { value } = route.params;
@@ -25,16 +22,41 @@ export default function TeamPanel( {route, navigation }) {
         }, [id]
     );
 
-    useEffect (
-        () => {
-            render_team(json_team, navigation)
-        }, [json_team]
+
+
+    return (
+
+        <View style={globalStyles.container}>
+
+            <View compId='Title'>
+                <Text >{json_team.team_name}</Text>
+                <View>
+                    <Text >Saldo</Text>
+                    <Text >{json_team.balance}</Text>
+                </View>
+            </View>
+            <View compId='balnce'>
+                <View>
+                    <Text>Número de Clientes</Text>
+                    <Text>{json_team.current_clients}</Text>
+                </View>
+                <View>
+                    <Text>Ingresos</Text>
+                    <Text>{json_team.income}</Text>
+                </View>
+                <View>
+                    <Text>Costos</Text>
+                    <Text>{json_team.cicle_cost}</Text>
+                </View>
+                <View>
+                    <Text>PyG</Text>
+                    <Text>{json_team.pyg}</Text>
+                </View>
+
+
+            </View>
+
+        </View>
+
     );
-
-
-
-    return (  <View style={globalStyles.container}>
-                <Text>hola {json_team.id}</Text>
-
-              </View> );
 };

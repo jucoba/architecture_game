@@ -18,6 +18,7 @@ const globalStyles = StyleSheet.create({
     text: {
         margin:5,
     },
+
     button: {
         margin:5,
         alignItems: "center",
