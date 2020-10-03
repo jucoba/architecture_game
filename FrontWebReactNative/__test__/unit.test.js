@@ -33,7 +33,7 @@ test('Register team button should be executed with team name = A team and Name=A
 
     fireEvent.press( submit_button );
 
-    expect(mockFn).toHaveBeenCalledWith( "A Team", "Anibal");
+    expect(mockFn).toHaveBeenCalledWith( "A Team", "Anibal", undefined);
 });
 
 test('Geting url in dev mode should return http://localhost:5000/ ', () => {
