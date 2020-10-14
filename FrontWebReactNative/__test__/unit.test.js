@@ -10,8 +10,6 @@ test('Register team should have two texts and one button', () => {
     const team_name_input = getAllByA11yLabel('team-name');
     expect(team_name_input).toBeDefined();
 
-    const player_name_input = getAllByA11yLabel('player-name');
-    expect(player_name_input).toBeDefined();
 
     const submit_button = getByText('Crea tu equipo');
     expect(submit_button).toBeDefined();
@@ -24,16 +22,14 @@ test('Register team button should be executed with team name = A team and Name=A
     const { getByText, getAllByA11yLabel, getByTestId }  = render( <RegisterTeam_with_function onSubmit={mockFn}/> );
     const submit_button = getByText('Crea tu equipo');
     const team_name_input = getByTestId('register_team_text_input');
-    const team_player_input = getByTestId('register_player_text_input');
 
 
     fireEvent.changeText(team_name_input,'A Team');
-    fireEvent.changeText(team_player_input,'Anibal');
 
 
     fireEvent.press( submit_button );
 
-    expect(mockFn).toHaveBeenCalledWith( "A Team", "Anibal", undefined);
+    expect(mockFn).toHaveBeenCalledWith( "A Team", "", undefined);
 });
 
 test('Geting url in dev mode should return http://localhost:5000/ ', () => {
