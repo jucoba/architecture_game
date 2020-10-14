@@ -33,34 +33,37 @@ export default function TeamPanel( {route, navigation }) {
                     <Text >{json_team.balance}</Text>
                 </View>
             </View>
-            <View compId='balnce'>
-                <View>
-                    <Text>Número de Clientes</Text>
-                    <Text>{json_team.current_clients}</Text>
-                </View>
-                <View>
-                    <Text>Capacidad máxima de Clientes</Text>
-                    <Text>{json_team.capacity}</Text>
-                </View>
-                <View>
-                    <Text>Ingresos</Text>
-                    <Text>{json_team.income}</Text>
-                </View>
-                <View>
-                    <Text>Costos</Text>
-                    <Text>{json_team.cicle_cost}</Text>
-                </View>
-                <View>
-                    <Text>PyG</Text>
-                    <Text>{json_team.pyg}</Text>
-                </View>
-            </View>
-            <View compId='config'>
-                <Text>Nivel de arquitectura</Text>
-                <Text>
+            <View style={globalStyles.properyContainer}>
+                <Text style={globalStyles.propTitle}>Nivel de arquitectura</Text>
+                <Text >
                     {json_team.architecture_level}
                 </Text>
             </View>
+            <View style={globalStyles.clientsContainer}>
+                <View style={globalStyles.properyContainer}>
+                    <Text style={globalStyles.propTitle}>Número de Clientes</Text>
+                    <Text>{json_team.current_clients}</Text>
+                </View>
+                <View style={globalStyles.properyContainer}>
+                    <Text style={globalStyles.propTitle}>Capacidad máxima de Clientes</Text>
+                    <Text>{json_team.capacity}</Text>
+                </View>
+            </View>
+            <View style={globalStyles.pnlContainer}>
+                <View style={globalStyles.properyContainer}>
+                    <Text style={globalStyles.propTitle}>Ingresos</Text>
+                    <Text>{json_team.income}</Text>
+                </View>
+                <View style={globalStyles.properyContainer}>
+                    <Text style={globalStyles.propTitle}>Costos</Text>
+                    <Text>{json_team.cicle_cost}</Text>
+                </View>
+                <View style={globalStyles.properyContainer}>
+                    <Text style={globalStyles.propTitle}>PyG</Text>
+                    <Text>{json_team.pyg}</Text>
+                </View>
+            </View>
+
 
         </View>
 

@@ -5,16 +5,40 @@ import { StyleSheet } from 'react-native';
 
 const globalStyles = StyleSheet.create({
     mainContainer: {
-        flex: 1,
         flexDirection: 'column',
         backgroundColor: '#fff',
-        alignItems: 'flex-start'
     },
     titleContainer: {
         flex: 1,
         flexDirection: 'column',
         backgroundColor: '#fff',
-        alignItems: 'flex-start'
+        alignItems: 'center'
+    },
+    clientsContainer: {
+        flexDirection: 'column',
+        backgroundColor: '#b3e5fc',
+        justifyContent: 'flex-start',
+        alignItems: 'flex-start',
+        margin:15,
+        width: 300,
+
+    },
+    pnlContainer: {
+        flex: 1,
+        flexDirection: 'column',
+        backgroundColor: '#4fc3f7',
+        justifyContent: 'flex-start',
+        margin:15,
+        width: 300,
+
+    },
+    properyContainer: {
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+    },
+    propTitle: {
+        marginEnd:5,
+        fontWeight: 'bold'
     },
     fixedProperty: {
         flex: 1,

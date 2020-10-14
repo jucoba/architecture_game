@@ -20,7 +20,7 @@ def register_team():
 
 @app.route('/team/<int:id>', methods=['GET'])
 def get_team(id):
-    print(id)
+    print("Team id"+id)
     team_list = logic.teams
     if id not in team_list:
         abort(404, description="Team not found")
