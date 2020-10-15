@@ -5,6 +5,8 @@ on dev mode needs in a web enviroment needs a plugin to allow CORS. I used Allow
 
 ##Install
 npm install
+pip install numpy
+
 
 ##Testing
 Using React Native Test Library (https://callstack.github.io/react-native-testing-library/docs/getting-started)

@@ -29,3 +29,8 @@ class TestGameBoard(unittest.TestCase):
         board.add_team(a_team)
         b_team = board.get_team(a_team.id)
         self.assertEqual(a_team, b_team)
+
+    def test_create_random_clients(self):
+        board = GameBoard()
+        clients = board.get_random_clients_low()
+        self.assertGreater(len(clients), 1)
