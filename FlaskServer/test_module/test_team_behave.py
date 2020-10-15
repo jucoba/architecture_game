@@ -34,10 +34,10 @@ class TestTeamsBehave(unittest.TestCase):
         a_team.architecture_level = 2
         self.assertEqual(a_team.capacity, 600)
 
-    def test_team_capacity_with_arc_level_3_must_be_2000(self):
+    def test_team_capacity_with_arc_level_3_must_be_10000(self):
         a_team = self.create_new_team()
         a_team.architecture_level = 3
-        self.assertEqual(a_team.capacity, 2000)
+        self.assertEqual(a_team.capacity, 10000)
 
     def test_team_income_with_100_clients_must_be_5000(self):
         a_team = self.create_new_team()
@@ -71,6 +71,25 @@ class TestTeamsBehave(unittest.TestCase):
         a_team.current_clients = 100
         a_team.architecture_level = 2
         self.assertEqual(a_team.pyg, -10000)
+
+    def test_team_add_30_clients(self):
+        a_team = self.create_new_team()
+        a_team.add_clients(30)
+        self.assertEqual(a_team.current_clients, 30)
+
+    def test_team_add_300_clients_and_overloads_capacity_clients_should_be_cut_in_half(self):
+        a_team = self.create_new_team()
+        a_team.add_clients(50)
+        self.assertEqual(a_team.current_clients, 50)
+        a_team.add_clients(300)
+        self.assertEqual(a_team.current_clients, 25)
+
+    def test_team_add_50_clients_and_get_to_capacity_clients_should_be_100(self):
+        a_team = self.create_new_team()
+        a_team.add_clients(50)
+        self.assertEqual(a_team.current_clients, 50)
+        a_team.add_clients(50)
+        self.assertEqual(a_team.current_clients, 100)
 
 
 

@@ -8,7 +8,7 @@ def create_team_id() -> int:
 capacity_switch = {
     1: 100,
     2: 600,
-    3: 2000
+    3: 10000
 }
 
 cost_switch = {
@@ -83,3 +83,10 @@ class Team:
     @current_clients.setter
     def current_clients(self, value):
         self._current_clients = value
+
+    def add_clients(self, value):
+        total_clients = self._current_clients + value
+        if total_clients <= self.capacity:
+            self._current_clients = total_clients
+        else:
+            self._current_clients = int(self._current_clients / 2)
