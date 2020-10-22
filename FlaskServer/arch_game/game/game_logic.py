@@ -1,5 +1,6 @@
 from arch_game.game.team import Team
 from arch_game.game.game_board import GameBoard
+import random as rand
 
 
 class GameLogic:
@@ -13,4 +14,14 @@ class GameLogic:
     @property
     def teams(self):
         return self.board.teams
+
+    def new_cicle(self, f_get_new_clients=None):
+        for team in self.teams.values():
+            if f_get_new_clients is not None:
+                new_clients = f_get_new_clients
+            else:
+                new_clients = rand.choice(self.board.get_random_clients_low())
+            team.add_clients(new_clients)
+
+
 

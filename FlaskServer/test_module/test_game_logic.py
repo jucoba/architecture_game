@@ -16,4 +16,21 @@ class TestGameBoard(unittest.TestCase):
         game_logic.register_new_team(t)
         self.assertEqual(t, game_logic.teams[t.id])
 
+    def mock_get_new_clients(self):
+        return 50
+
+    def test_new_cicle(self):
+        game_logic: GameLogic = GameLogic()
+        a = Team("A Team", "Anibal")
+        b = Team("B Team", "Anibal")
+
+        game_logic.register_new_team(a)
+        game_logic.register_new_team(b)
+        game_logic.new_cicle(self.mock_get_new_clients())
+
+        self.assertEqual(a.current_clients, 50)
+        self.assertEqual(b.current_clients, 50)
+
+
+
 
