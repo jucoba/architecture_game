@@ -96,6 +96,17 @@ class TestTeamsBehave(unittest.TestCase):
         a_team.add_clients(50)
         self.assertEqual(a_team.income, 2500)
 
+    def test_leads_when_add_100_new_clients_leads_should_be_100(self):
+        a_team = self.create_new_team()
+        a_team.add_clients(100)
+        self.assertEqual(a_team.leads, 100)
+
+    def test_leads_when_add_100_new_clients_and_then_50_clients_leads_should_be_50(self):
+        a_team = self.create_new_team()
+        a_team.add_clients(100)
+        a_team.add_clients(50)
+        self.assertEqual(a_team.leads, 50)
+
 
 
 

@@ -31,6 +31,15 @@ class Team:
         self._can_receive_new_clients = False
         self._id = f()
         self.current_clients = 0
+        self.leads = 0
+
+    @property
+    def leads(self):
+        return self._leads
+
+    @leads.setter
+    def leads(self, value):
+        self._leads = value
 
     @property
     def team_name(self):
@@ -85,6 +94,7 @@ class Team:
         self._current_clients = value
 
     def add_clients(self, value):
+        self._leads = value
         total_clients = self._current_clients + value
         if total_clients <= self.capacity:
             self._current_clients = total_clients

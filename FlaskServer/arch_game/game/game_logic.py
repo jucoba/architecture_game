@@ -13,3 +13,4 @@ class GameLogic:
     @property
     def teams(self):
         return self.board.teams
+
