@@ -91,6 +91,12 @@ class TestTeamsBehave(unittest.TestCase):
         a_team.add_clients(50)
         self.assertEqual(a_team.current_clients, 100)
 
+    def test_add_50_clients_to_a_new_created_team_income_should_be_250(self):
+        a_team = self.create_new_team()
+        a_team.add_clients(50)
+        self.assertEqual(a_team.income, 2500)
+
+
 
 
 
