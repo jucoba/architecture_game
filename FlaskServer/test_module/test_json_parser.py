@@ -26,3 +26,11 @@ class TestJsonPareser(unittest.TestCase):
         self.assertEqual(json_t["current_clients"], t.current_clients)
         self.assertEqual(json_t["can_receive_new_clients"], t.can_receive_new_clients)
 
+    def test_update_team(self):
+        parser = JsonParser()
+        team_dictionary = {
+            'team_name': 'a',
+            'player_name': 'b'
+
+        }
+

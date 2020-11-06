@@ -2,24 +2,44 @@ import { StatusBar } from 'expo-status-bar';
 import React, {useState, useEffect} from 'react';
 import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
 import globalStyles from '../styles/globalStyles';
-import { get_team_api } from '../ApiCalls/get_team_api';
+import { get_team_api } from '../ApiCalls/team_api';
+
 
 
 export default function TeamPanel( {route, navigation }) {
     const { value } = route.params;
     const [id, setId] = useState(JSON.stringify(value));
+    const [render, setRender] = useState(true);
 
     const [json_team, setJson_team] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [first_time, setFirst_time] = useState(true);
+
+    const[cicle, setCicle] = useState(0);
 
     useEffect(
         () => {
-            fetch('http://localhost:5000/team/'+id)
+            console.log("get team values");
+            fetch(global.url+'team/'+id)
                 .then((response) => response.json())
                 .then((json) => setJson_team(json) )
                 .catch((error) => console.log(error)  )
                 .finally( () => setLoading(false) )
-        }, [id]
+        }, [cicle]
+    );
+
+    useEffect(
+        () => {
+            if (!first_time) {
+               console.log("new cicle");
+               fetch(global.url+'team/new_cicle/'+id)
+                .catch((error) => console.log(error)  )
+                .finally( () => setLoading(false) )
+               setCicle(cicle + 1);
+            }
+            setFirst_time(false);
+
+        }, [render]
     );
 
     return (
@@ -40,6 +60,10 @@ export default function TeamPanel( {route, navigation }) {
                 </Text>
             </View>
             <View style={globalStyles.clientsContainer}>
+                <View style={globalStyles.properyContainer}>
+                    <Text style={globalStyles.propTitle}>Leads</Text>
+                    <Text>{json_team.leads}</Text>
+                </View>
                 <View style={globalStyles.properyContainer}>
                     <Text style={globalStyles.propTitle}>Número de Clientes</Text>
                     <Text>{json_team.current_clients}</Text>
@@ -63,6 +87,12 @@ export default function TeamPanel( {route, navigation }) {
                     <Text>{json_team.pyg}</Text>
                 </View>
             </View>
+
+            <Button
+                onPress={() => setRender(!render)}
+                title="Nuevo Ciclo"
+                color="#841584"
+            />
 
 
         </View>

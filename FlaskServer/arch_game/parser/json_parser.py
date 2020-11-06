@@ -23,8 +23,11 @@ class JsonParser:
             "income": team.income,
             "pyg": team.pyg,
             "current_clients": team.current_clients,
+            "leads": team.leads,
             "can_receive_new_clients": team.can_receive_new_clients,
 
         }
+        for value in team_dict:
+            print(value +":"+str(type(team_dict[value])))
 
         return team_dict

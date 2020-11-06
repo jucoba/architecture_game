@@ -28,8 +28,10 @@ class TestGameBoard(unittest.TestCase):
         game_logic.register_new_team(b)
         game_logic.new_cicle(self.mock_get_new_clients())
 
-        self.assertEqual(a.current_clients, 50)
-        self.assertEqual(b.current_clients, 50)
+        self.assertEqual(50, a.current_clients)
+        self.assertEqual(50, b.current_clients)
+        self.assertEqual(97500, a.balance)
+        self.assertEqual(97500, b.balance)
 
 
 

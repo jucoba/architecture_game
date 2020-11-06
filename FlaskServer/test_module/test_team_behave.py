@@ -24,10 +24,10 @@ class TestTeamsBehave(unittest.TestCase):
         a_team.architecture_level = 3
         self.assertEqual(a_team.cicle_cost, 30000)
 
-    def test_team_capacity_with_arc_level_1_must_be_100(self):
+    def test_team_capacity_with_arc_level_1_must_be_200(self):
         a_team = self.create_new_team()
         a_team.architecture_level = 1
-        self.assertEqual(a_team.capacity, 100)
+        self.assertEqual(200, a_team.capacity)
 
     def test_team_capacity_with_arc_level_2_must_be_600(self):
         a_team = self.create_new_team()
@@ -106,6 +106,17 @@ class TestTeamsBehave(unittest.TestCase):
         a_team.add_clients(100)
         a_team.add_clients(50)
         self.assertEqual(a_team.leads, 50)
+
+    def test_team_balance_should_be_10000_in_new_team(self):
+        a_team = self.create_new_team()
+        self.assertEqual(100000, a_team.balance)
+
+    def test_team_balance_with_600_clients_and_arch_level_2_must_be_115000(self):
+        a_team = self.create_new_team()
+        a_team.current_clients = 600
+        a_team.architecture_level = 2
+        a_team.update_balance()
+        self.assertEqual(a_team.pyg, 15000)
 
 
 

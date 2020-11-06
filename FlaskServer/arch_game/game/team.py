@@ -6,7 +6,7 @@ def create_team_id() -> int:
 
 
 capacity_switch = {
-    1: 100,
+    1: 200,
     2: 600,
     3: 10000
 }
@@ -90,13 +90,16 @@ class Team:
         return self.income - self.cicle_cost
 
     @current_clients.setter
-    def current_clients(self, value):
+    def current_clients(self, value: int):
         self._current_clients = value
 
-    def add_clients(self, value):
+    def add_clients(self, value: int):
         self._leads = value
         total_clients = self._current_clients + value
         if total_clients <= self.capacity:
             self._current_clients = total_clients
         else:
             self._current_clients = int(self._current_clients / 2)
+
+    def update_balance(self):
+        self._current_balance = self._current_balance + self.pyg

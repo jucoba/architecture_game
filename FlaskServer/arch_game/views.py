@@ -20,7 +20,6 @@ def register_team():
 
 @app.route('/team/<int:id>', methods=['GET'])
 def get_team(id):
-    print("Team id"+id)
     team_list = logic.teams
     if id not in team_list:
         abort(404, description="Team not found")
@@ -30,3 +29,13 @@ def get_team(id):
         json_t = jsonify(parser.parse_team(t))
         print(json_t)
         return json_t
+
+
+@app.route('/team/new_cicle/<int:id>', methods=['GET'])
+def new_team_cicle(id):
+    team_list = logic.teams
+    if id not in team_list:
+        abort(404, description="Team not found")
+    else:
+        logic.new_team_cicle(id)
+        return "ok"

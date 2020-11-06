@@ -8,7 +8,7 @@ class GameBoard:
 
     def __init__(self):
         self._teams = {}
-        self.clients_low = np.random.normal(100, 20, 100).astype(int)
+        self.clients_low = np.random.normal(50, 40, 100).astype(int)
 
     @property
     def teams(self) -> Dict[int, Team]:
