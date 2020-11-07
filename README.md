@@ -7,10 +7,19 @@ on dev mode needs in a web enviroment needs a plugin to allow CORS. I used Allow
 npm install
 pip install numpy
 
+##set Vitual env
+source venv/bin/activate
 
 ##Testing
 Using React Native Test Library (https://callstack.github.io/react-native-testing-library/docs/getting-started)
 
+##Run de front server
+cd FrontWebReactNative
+expo run
+
+##Run the backend server
+cd FlaskServer
+./start_server.sh
 
 Inside FrontWebReactNative
 1. Install React Native Test Library
