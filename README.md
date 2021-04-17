@@ -15,7 +15,7 @@ Using React Native Test Library (https://callstack.github.io/react-native-testin
 
 ##Run de front server
 cd FrontWebReactNative
-expo run
+expo start
 
 ##Run the backend server
 cd FlaskServer
